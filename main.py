@@ -1,19 +1,31 @@
 # Importing modules
 import random as rd
-
-#Step 1 
+ 
 
 word_list = ["aardvark", "baboon", "camel"]
 
-#TODO-1 - Randomly choose a word from the word_list and assign it to a variable called chosen_word.
 chosen_word = rd.choice(word_list)
 
-#TODO-2 - Ask the user to guess a letter and assign their answer to a variable called guess. Make guess lowercase.
+
+# Testing code
+print(f'Pssst, the solution is {chosen_word}.')
+
+# Create an empty List called display
+# For each letter in the chosen word, add a "_" to 'display'
+
+display = []
+for i in range(0,len(chosen_word)):
+    display.append('_')
+print(display)
+
 guess = input('Guess a letter : ').lower()
 
 #TODO-3 - Check if the letter the user guessed (guess) is one of the letters in the chosen_word.
+i = 0
 for letter in chosen_word:
     if guess == letter:
-        print(f'Letter {guess} is in the word')
+        display[i] = letter
     else:
         print('Wrong')
+    i+=1
+print(display)
